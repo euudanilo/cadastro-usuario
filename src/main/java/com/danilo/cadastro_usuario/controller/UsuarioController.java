@@ -4,10 +4,9 @@ import com.danilo.cadastro_usuario.business.UsuarioService;
 import com.danilo.cadastro_usuario.infrastructure.entity.Usuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
@@ -19,5 +18,10 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario){
         return ResponseEntity.ok(service.cadastraUsuario(usuario));
+    }
+
+    @GetMapping
+    public List<Usuario> listarUsuarios() {
+        return service.listarTodosUsuarios();
     }
 }

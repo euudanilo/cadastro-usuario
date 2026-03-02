@@ -5,6 +5,8 @@ import com.danilo.cadastro_usuario.infrastructure.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UsuarioService {
@@ -18,5 +20,9 @@ public class UsuarioService {
                 });
 
         return repository.save(usuario);
+    }
+
+    public List<Usuario> listarTodosUsuarios() {
+        return repository.findAll();
     }
 }
