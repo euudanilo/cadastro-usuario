@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    container_name: cadastro-usuario-db
+    environment:
+      POSTGRES_DB: cadastro_usuario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:
