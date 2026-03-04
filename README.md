@@ -84,6 +84,7 @@ cadastro-usuario
 <pre>
 git clone https://github.com/euudanilo/cadastro-usuario.git
 cd cadastro-usuario
+./mvnw clean package
 </pre>
 
 <h3>2️⃣ Subir com Docker</h3>
