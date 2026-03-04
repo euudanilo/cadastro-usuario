@@ -80,23 +80,29 @@ cadastro-usuario
 <h2>▶️ Como Executar</h2>
 
 <h3>1️⃣ Clonar o repositório</h3>
-
 <pre>
 git clone https://github.com/euudanilo/cadastro-usuario.git
 cd cadastro-usuario
+</pre>
+
+<h3>2️⃣ Gerar o build da aplicação</h3>
+
+<p><strong>Linux / Mac:</strong></p>
+<pre>
 ./mvnw clean package
 </pre>
 
-<h3>2️⃣ Subir com Docker</h3>
+<p><strong>Windows (PowerShell / CMD):</strong></p>
+<pre>
+mvnw.cmd clean package
+</pre>
 
+<h3>3️⃣ Subir com Docker</h3>
 <pre>
 docker-compose up --build
 </pre>
 
-<p>
-A aplicação estará disponível em:
-</p>
-
+<p>A aplicação estará disponível em:</p>
 <pre>
 http://localhost:8080/usuario
 </pre>
